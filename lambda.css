@@ -131,3 +131,31 @@ body {
   transition-delay: 0, 0.3s;
 }
 /** Hamburger End **/
+
+/** Social Links Start **/
+.presence {
+  display: flex;
+}
+
+.presence__link {
+  flex: 4;
+  font-size: 5.5vw;
+  text-align: center;
+}
+
+.presence__link--facebook {
+  color: #3b5998;
+}
+
+.presence__link--instagram {
+  color: #517fa4;
+}
+
+.presence__link--flickr {
+  color: #ff0084;
+}
+
+.presence__link--twitter {
+  color: #00aced;
+}
+/** Social Links End **/

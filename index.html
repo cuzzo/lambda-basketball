@@ -5,8 +5,24 @@
   <title>Lambda | Los Angeles Gay Basketball</title>
   <meta />
   <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="lambda.css" />
+  <script type="text/javascript" src="instafeed.min.js"></script>
   <script type="text/javascript" src="hamburger.js"></script>
+  <script type="text/javascript">
+    /*var feed = new Instafeed({
+      clientId: "",
+      accessToken: "",
+      get: "user",
+      userId: "317747729",
+      filter: function(image) {
+        return true; //image.tags.indexOf("TAG_NAME") !== -1;
+      }
+    });
+    document.addEventListener("DOMContentLoaded", function(ev) {
+      feed.run();
+    });*/
+  </script>
 </head>
 <body>
   <header>
@@ -26,23 +42,29 @@
     </nav>
   </header>
   <section id="hero" class="hero"></section>
-  <section id="social-links"></section>
+  <section id="social-links" class="presence">
+    <a href="https://www.facebook.com/lambdabasketball" title="Lambda Facebook" class="presence__link presence__link--facebook"><i class="fa fa-facebook-official"></i></a>
+    <a href="https://instagram.com/lambdabasketball/" title="Lambda Instagram" class="presence__link presence__link--instagram"><i class="fa fa-instagram"></i></a>
+    <a href="https://www.flickr.com/photos/42642399@N03/sets/" title="Lambda Flickr" class="presence__link presence__link--flickr"><i class="fa fa-flickr"></i></a>
+    <a href="https://twitter.com/lambdabball" title="Lambda Twitter" class="presence__link presence__link--twitter"><i class="fa fa-twitter"></i></a>
+  </section>
   <section id="new-players">
     <h2>Want to Play with Us?</h2>
       <h3>When we play:</h3>
       <p>Open play is 7:30-9:30 p.m. Tuesdays and Fridays.<br />
         + <a href="#lambda-league">League Play</a>. Check out our <a href="#rules">rules</a>.</p>
       <h3>Where we play:</h3>
-      <p><a href="">Bancroft Middle School</a> &amp; <a href="">Contreras High School</a><br />
+      <p><a href="https://www.google.com/maps/place/Hubert+Howe+Bancroft+Middle+School/@34.087906,-118.336353,17z/data=!3m1!4b1!4m2!3m1!1s0x80c2bf2d0ed4aaf7:0xc75a7e7d13a7866e">Bancroft Middle School</a> &amp; <a href="https://www.google.com/maps/place/Contreras+High+School+Stadium/@34.059061,-118.259423,17z/data=!4m2!3m1!1s0x80c2c7a94cc7c1d3:0x38b37015a497dea0">Contreras High School</a><br />
         + <a href="#travel-leagues">Travel Leagues</a>.</p>
       <h3>How to join:</h3>
-      <p>Come to <a href="">CHS</a> on Tuesday or <a href="">BMS</a> on Friday. Bring your shoes and your game.<br />
+      <p>Come to <a href="https://www.google.com/maps/place/Contreras+High+School+Stadium/@34.059061,-118.259423,17z/data=!4m2!3m1!1s0x80c2c7a94cc7c1d3:0x38b37015a497dea0"><abbr title="Contreras High School">CHS</abbr></a> on Tuesday or <a href="https://www.google.com/maps/place/Hubert+Howe+Bancroft+Middle+School/@34.087906,-118.336353,17z/data=!3m1!4b1!4m2!3m1!1s0x80c2bf2d0ed4aaf7:0xc75a7e7d13a7866e"><abbr title="Bancroft Middle School">BMS</abbr></a> on Friday. Bring your shoes and your game.<br />
         Don't be shy. New players join weekly, and we accomodate all skill levels from beginners to former college athletes.<br />
         Anyone is welcome. Anyone can be challenged.</p>
   </section>
   <section id="announcements"></section><!-- only if FB announcement in the last week -->
   <section id="social">
     <h2>Lambda Outisde Basketball</h2>
+      <div id="instafeed"></div>
       Instagram Gallery. List of upcoming events. Calendar link.
   </section>
   <section id="travel-leagues">

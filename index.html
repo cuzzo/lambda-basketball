@@ -7,7 +7,9 @@
   <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="lambda.css" />
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script type="text/javascript" src="instafeed.min.js"></script>
+  <script type="text/javascript" src="gcallist.js"></script>
   <script type="text/javascript" src="hamburger.js"></script>
   <script type="text/javascript">
     /*var feed = new Instafeed({
@@ -25,19 +27,19 @@
   </script>
 </head>
 <body>
-  <header>
-   <button class="hamburger hamburger__htx" data-toggle-el="header__nav">
+  <header id="header" class="header">
+   <button class="hamburger hamburger__htx" data-toggle-el="header">
       <span>toggle menu</span>
    </button>
    <h1 class="header__title"><a href="/" class="header__link">Lambda Basketball</a></h1>
-   <nav id="header__nav" class="pure-g header__nav">
-     <ul class="pure-u-1 pure-u-md-1-3">
-        <li><a href="#new-players" title="New Players">New Players</a></li>
-        <li><a href="#social" title="Lambda Social Life">Social</a></li>
-        <li><a href="#travel-leagues" title="Gay Travel Basketball Leagues">Travel Leagues</a></li>
-        <li><a href="#lambda-league" title="Los Angeles Gay Basketball League">Lambda League</a></li>
-        <li><a href="#about" title="About Lambda Basketball">About</a></li>
-        <li><a href="">Calendar</a></li>
+   <nav class="pure-g header__nav">
+     <ul class="pure-u-1 pure-u-md-1-3 header__menu">
+        <li><a href="#new-players" title="New Players" class="header__link">New Players</a></li>
+        <li><a href="#social" title="Lambda Social Life" class="header__link">Social</a></li>
+        <li><a href="#travel-leagues" title="Gay Travel Basketball Leagues" class="header__link">Travel Leagues</a></li>
+        <li><a href="#lambda-league" title="Los Angeles Gay Basketball League" class="header__link">Lambda League</a></li>
+        <li><a href="#about" title="About Lambda Basketball" class="header__link">About</a></li>
+        <li><a href="" title="Lambda Calendar" class="header__link">Calendar</a></li>
       </ul>
     </nav>
   </header>
@@ -64,8 +66,8 @@
   <section id="announcements"></section><!-- only if FB announcement in the last week -->
   <section id="social">
     <h2>Lambda Outisde Basketball</h2>
-      <div id="instafeed"></div>
-      Instagram Gallery. List of upcoming events. Calendar link.
+    <div id="instafeed"></div>
+    <div data-calendar-id="af6oja12qc3sfr515375k1v2d8"></div>
   </section>
   <section id="travel-leagues">
     <h2>Lambda Outside <abbr title="Los Angeles">LA</abbr></h2>
@@ -80,15 +82,36 @@
     <h3>Mission Statement</h3>
       <p>Lambda Basketball is an integrated and all-inclusive organization dedicated to providing the Los Angeles area LGBT community and its friends with a well-organized and friendly sporting environment. We are committed to uniting athletes, communities and cultures on and off the court while promoting health education and community service.</p>
     <h3>Board of Directors</h3>
-      Avatar, name, links to profiles? or mailto.
+      <ul class="directors">
+        <li class="director__icon">
+          <div class="director__avatar director__avatar--jason"></div>
+          <a href="" title="Contact Jason Jaramillo">Jason Jaramillo &mdash; President</a>
+        </li>
+        <li class="director__icon">
+          <div class="director__avatar director__avatar--garsten"></div>
+          <a href="" title="Contact Garsten Bergquist">Garsten Bergquist &mdash; Vice President</a>
+        </li>
+        <li class="director__icon">
+          <div class="director__avatar director__avatar--drew"></div>
+          <a href="" title="Contact Andrew Moran">Andrew Moran &mdash; Vice President</a>
+        </li>
+        <li class="director__icon">
+          <div class="director__avatar director__avatar--brian"></div>
+          <a href="" title="Contact Brian Davis">Brian Davis &mdash; Secretary</a>
+        </li>
+        <li class="director__icon">
+          <div class="director__avatar director__avatar--aaron"></div>
+          <a href="" title="Contact Aaron Morris">Aaron Morris &mdash; Treasurer</a>
+        </li>
+      </ul>
   </section>
   <footer>
     <div>
       <h4>Others</h4>
     </div>
     <p>
-      <small>&copy; 2015 Lambda Basketball. All rights reserved.</small>
-      <small>Coded with love by <a href="https://gitthub.com/cuzzo">Cuzzo</a>.</small>
+      <small class="footer__small">&copy; 2015 Lambda Basketball. All rights reserved.</small>
+      <small class="footer__small">Coded with love by <a href="https://gitthub.com/cuzzo">Cuzzo</a>.</small>
     </p>
   </footer>
 </body>

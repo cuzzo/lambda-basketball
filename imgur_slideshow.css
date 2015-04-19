@@ -1,0 +1,42 @@
+.slideshow {
+  width: 300px;
+  height: 100px;
+  border: 1px solid #000;
+}
+
+.imgur-slideshow {
+  background-size: 100% 100%;
+  position: relative;
+}
+.imgur-slideshow--clickable:hover {
+  cursor: pointer;
+}
+
+.imgur-slideshow__scroll-button {
+  position: absolute;
+  top: 50%;
+  height: 20px;
+  margin-top: -10px;
+  opacity: 0.75;
+  background-color: transparent;
+  border: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #888;
+}
+.imgur-slideshow__scroll-button:hover {
+  cursor: pointer;
+}
+
+.imgur-slideshow__scroll-button--left {
+  left: 0;
+}
+.imgur-slideshow__scroll-button--left:before {
+  content: "\00AB";
+}
+.imgur-slideshow__scroll-button--right {
+  right: 0;
+}
+.imgur-slideshow__scroll-button--right:before {
+  content: "\00BB";
+}

@@ -44,7 +44,8 @@ body {
 .hero {
   position: relative;
   padding-bottom: 36%;
-  background: url("http://lambdabasketball.com/wp-content/themes/starkers-html5/style/images/spring-2015.png") no-repeat top left;
+  background-repeat: no-repeat;
+  background-position: top left;
   background-size: contain;
 }
 

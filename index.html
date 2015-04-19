@@ -6,14 +6,16 @@
   <meta />
   <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="imgur_slideshow.css" />
   <link rel="stylesheet" type="text/css" href="lambda.css" />
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script type="text/javascript" src="instafeed.min.js"></script>
   <script type="text/javascript" src="gcallist.js"></script>
+  <script type="text/javascript" src="imgur_slideshow.js"></script>
   <script type="text/javascript" src="hamburger.js"></script>
   <script type="text/javascript">
-    /*var feed = new Instafeed({
-      clientId: "",
+    var feed = new Instafeed({
+      clientId: "ccf746978f7c4701b4cdd58bc85313ab",
       accessToken: "",
       get: "user",
       userId: "317747729",
@@ -23,7 +25,7 @@
     });
     document.addEventListener("DOMContentLoaded", function(ev) {
       feed.run();
-    });*/
+    });
   </script>
 </head>
 <body>
@@ -43,7 +45,7 @@
       </ul>
     </nav>
   </header>
-  <section id="hero" class="hero"></section>
+  <section id="hero" class="hero" data-imgur-album-id="QR5ZS"></section>
   <section id="social-links" class="presence">
     <a href="https://www.facebook.com/lambdabasketball" title="Lambda Facebook" class="presence__link presence__link--facebook"><i class="fa fa-facebook-official"></i></a>
     <a href="https://instagram.com/lambdabasketball/" title="Lambda Instagram" class="presence__link presence__link--instagram"><i class="fa fa-instagram"></i></a>
@@ -67,7 +69,7 @@
   <section id="social">
     <h2>Lambda Outisde Basketball</h2>
     <div id="instafeed"></div>
-    <div data-calendar-id="af6oja12qc3sfr515375k1v2d8"></div>
+    <div data-calendar-id="admin@lambdabasketball.com"></div>
   </section>
   <section id="travel-leagues">
     <h2>Lambda Outside <abbr title="Los Angeles">LA</abbr></h2>

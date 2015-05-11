@@ -177,6 +177,9 @@ body {
 .presence__link--twitter {
   color: #00aced;
 }
+.presence__link--calendar {
+  color: #5202BA;
+}
 /** Social Links End **/
 
 /** Directors Start **/

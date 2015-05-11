@@ -17,11 +17,11 @@
   <script type="text/javascript">
     var feed = new Instafeed({
       clientId: "ccf746978f7c4701b4cdd58bc85313ab",
-      accessToken: "",
-      get: "user",
-      userId: "317747729",
+      accessToken: "317747729.467ede5.3372644d81a2418abc0919cf40685681",
+      get: "tagged",
+      tagName: "lambdafamily",
       filter: function(image) {
-        return true; //image.tags.indexOf("TAG_NAME") !== -1;
+        return image.user.id === "317747729";
       }
     });
     document.addEventListener("DOMContentLoaded", function(ev) {
@@ -38,6 +38,7 @@
    <nav class="pure-g header__nav">
      <ul class="pure-u-1 pure-u-md-1-3 header__menu">
         <li><a href="#new-players" title="New Players" class="header__link">New Players</a></li>
+        <li><a href="#open-gym" title="Open Gym" class="header__link">Open Gym</a></li>
         <li><a href="#social" title="Lambda Social Life" class="header__link">Social</a></li>
         <li><a href="#travel-leagues" title="Gay Travel Basketball Leagues" class="header__link">Travel Leagues</a></li>
         <li><a href="#lambda-league" title="Los Angeles Gay Basketball League" class="header__link">Lambda League</a></li>
@@ -52,41 +53,45 @@
     <a href="https://instagram.com/lambdabasketball/" title="Lambda Instagram" class="presence__link presence__link--instagram"><i class="fa fa-instagram"></i></a>
     <a href="https://www.flickr.com/photos/42642399@N03/sets/" title="Lambda Flickr" class="presence__link presence__link--flickr"><i class="fa fa-flickr"></i></a>
     <a href="https://twitter.com/lambdabball" title="Lambda Twitter" class="presence__link presence__link--twitter"><i class="fa fa-twitter"></i></a>
-    <a href="https://www.google.com/calendar/embed?src=en.usa%23holiday%40group.v.calendar.google.com&ctz=America/Los_Angeles" title="Lambda Twitter" class="presence__link presence__link--calendar"><i class="fa fa-calendar"></i></a>
+    <a href="https://www.google.com/calendar/embed?src=en.usa%23holiday%40group.v.calendar.google.com&ctz=America/Los_Angeles" title="Lambda Calendar" class="presence__link presence__link--calendar"><i class="fa fa-calendar"></i></a>
   </section>
-  <section id="new-players">
+  <section id="new-players" class="section--separated">
     <h2>Want to Play with Us?</h2>
-      <h3>Open Gym:</h3>
-      <p>Open Gym is our version of pick-up/scrimmage night where we run 5 on 5, 8 minute games.  These nights are open to players of all skill levels, unless otherwise noted on the schedule.  Come in, sign-in and pay $5 and you're good to go!</p>
-
-       <h4><u>Tuesdays</u></h4>
-       <ul>
-         <li>Contreras High School - <a href="https://www.google.com/maps/place/Contreras+High+School+Stadium/@34.059061,-118.259423,17z/data=!4m2!3m1!1s0x80c2c7a94cc7c1d3:0x38b37015a497dea0">322 S Lucas Ave, LA, CA</a> <br />(Gym Entrance is on 3rd Street)</li>
-         <li>7:30 - 9:30 p.m.</li>
-        </ul>
-
-       <h4><u>Fridays</u></h4>
-       <ul>
-         <li>Bancroft Middle School - <a href="https://www.google.com/maps/place/Hubert+Howe+Bancroft+Middle+School/@34.087906,-118.336353,17z/data=!3m1!4b1!4m2!3m1!1s0x80c2bf2d0ed4aaf7:0xc75a7e7d13a7866e">929 N Las Palmas Ave, LA, CA</a> <br />(Gym Entrance is Above Parking Garage)</li>
-         <li>7:30 - 9:30 p.m.</li>
-        </ul>
-
-        <h3 id="lambda-league">League:</h3>
-        <p>Lambda Basketball operates 2 league seasons per year in the Spring and Fall.  The season is generally 10-13 games and costs $100 which covers costs for the gym, referees, a reversible jersey, draft party, and a closing party.  Teams of 8 are Captained by volunteer players in the league and consist of all skill levels.</p>
-        <p>Check out our <a href="#rules">rules</a>.</p>
+    <p>We welcome new players at <a href="#open-gym">open gym</a> and our seasonal <a href="#lambda-league">leagues</a>.</p>
   </section>
-  <section id="announcements"></section><!-- only if FB announcement in the last week -->
-  <section id="social">
+  <section id="open-gym" class="section--separated">
+    <h2 class="header--tight">Open Gym</h2>
+    <p class="p--tight"><i>Open Gym is our version of pick-up/scrimmage night where we run 5 on 5, 8 minute games. These nights are open to players of all skill levels, unless otherwise noted on the <a href="https://www.google.com/calendar/embed?src=en.usa%23holiday%40group.v.calendar.google.com&ctz=America/Los_Angeles" title="Lambda Calendar">calendar</a>. <span class="action">Come in with a reversible jersey (or dark and light shirts), sign a waiver, pay $5 and you're good to go! One of our Lambda Basketball <a href="#board-of-directors">board of directors</a> will be at the score table to help you get started.</span></i></p>
+
+     <h4 class="header--tight"><u>Tuesdays</u></h4>
+     <ul class="ul--tight">
+       <li>Contreras High School - <a href="https://www.google.com/maps/place/Contreras+High+School+Stadium/@34.059061,-118.259423,17z/data=!4m2!3m1!1s0x80c2c7a94cc7c1d3:0x38b37015a497dea0">322 S Lucas Ave, LA, CA</a> <br />(Gym Entrance is on 3rd Street)</li>
+       <li>7:30 - 9:30 p.m.</li>
+     </ul>
+
+     <h4 class="header--tight"><u>Fridays</u></h4>
+     <ul class="ul--tight">
+       <li>Bancroft Middle School - <a href="https://www.google.com/maps/place/Hubert+Howe+Bancroft+Middle+School/@34.087906,-118.336353,17z/data=!3m1!4b1!4m2!3m1!1s0x80c2bf2d0ed4aaf7:0xc75a7e7d13a7866e">929 N Las Palmas Ave, LA, CA</a> <br />(Gym Entrance is Above Parking Garage)</li>
+       <li>7:30 - 9:30 p.m.</li>
+     </ul>
+    </section>
+  </section>
+  <!--<section id="announcements">only if FB announcement in the last week </section>-->
+  <section id="social" class="section--separated">
     <h2>Lambda Social Life #LAMBDAFAMILY</h2>
     <div id="instafeed"></div>
     <div data-calendar-id="admin@lambdabasketball.com"></div>
     <p>blurb</p>
   </section>
-  <section id="travel-leagues">
+  <section id="lambda-league" class="section--separated">
+    <h2 id="lambda-league" class="header--tight">League</h3>
+    <p class="p--tight"><i>Lambda Basketball operates 2 league seasons per year in the Spring and Fall.  The season is generally 10-13 games and costs $100 which covers costs for the gym, referees, a reversible jersey, draft party, and a closing party.  Teams of 8 are Captained by volunteer players in the league and consist of all skill levels. <span class="action"></span></i></p>
+  </section>
+  <section id="travel-leagues" class="section--separated">
     <h2>Lambda Travel Teams</h2>
     <p>blurb</p>
   </section>
-  <section id="rules-and-procedures">
+  <section id="rules-and-procedures" class="section--separated">
     <h2>Rules and Procedures</h2>
     <ul>
       <li>League Rules
@@ -99,11 +104,11 @@
       <li>Code of Conduct Violations</li>
     </ul>
   </section>
-  <section id="about">
+  <section id="about" class="section--separated">
     <h2>About Lambda</h2>
     <h3>Mission Statement</h3>
       <p>Lambda Basketball is an integrated and all-inclusive organization dedicated to providing the Los Angeles area LGBT community and its friends with a well-organized and friendly sporting environment. We are committed to uniting athletes, communities and cultures on and off the court while promoting health education and community service. Lambda is a subsidiary of Community OUTreach Alliance (COA).</p>
-    <h3>Board of Directors</h3>
+    <h3 id="board-of-directors id="board-of-directors"">Board of Directors</h3>
       <ul class="pure-g directors">
         <li class="pure-u-1-3 director__icon">
           <div class="director__avatar director__avatar--jason"></div>
@@ -111,7 +116,7 @@
         </li>
         <li class="pure-u-1-3 director__icon">
           <div class="director__avatar director__avatar--garsten"></div>
-          <a href="" title="Contact Garsten Bergquist">Garsten Bergquist &mdash; Vice President</a>
+          <a href="" title="Contact Garsten Bergquist">Garsten Bergquist &mdash; Board Member at Large</a>
         </li>
         <li class="pure-u-1-3 director__icon">
           <div class="director__avatar director__avatar--drew"></div>
@@ -126,6 +131,11 @@
           <a href="" title="Contact Aaron Morris">Aaron Morris &mdash; Treasurer</a>
         </li>
       </ul>
+    <h3>Contact Us</h3>
+    <ul>
+      <li><a href="http://lambdabasketball.wufoo.com/forms/sign-up-for-lambda-basketball">Sign Up for Lambda Email Announcements</a></li>
+      <li><a href="mailto:admin@lambdabasketball.com">Email Us</a></li>
+    </ul>
   </section>
   <footer>
     <div>

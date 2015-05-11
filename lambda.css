@@ -4,6 +4,29 @@ body {
   margin: 0 auto;
 }
 
+.section--separated {
+  border-bottom: 1px solid #afafaf;
+}
+
+.header--tight {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.p--tight {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.ul--tight {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.action {
+  font-weight: bold;
+}
+
 .header__nav {
   visibility: hidden;
   opacity: 0;

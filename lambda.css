@@ -249,6 +249,12 @@ body {
 }
 /** Directors End **/
 
+/** IG **/
+#instafeed img {
+  max-width: 120px;
+  width: 25%;
+}
+
 .footer__small {
   display: block;
 }

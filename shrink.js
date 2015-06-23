@@ -7,13 +7,13 @@
         i;
 
     for (i = 0; i < sections.length; i++) {
+      var section = sections[i].closest(".section--separated");
       sections[i].addEventListener("click", function(ev) {
-          this.closest(".section--separated")
-              .classList.toggle("section--collapsed");
-        });
+          this.classList.toggle("section--collapsed");
+        }.bind(section));
 
       if (!mobile_rgx.test(navigator.userAgent)) continue;
-      sections[i].classList.add("section--collapsed");
+      section.classList.add("section--collapsed");
     }
   });
 

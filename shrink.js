@@ -12,7 +12,7 @@
               .classList.toggle("section--collapsed");
         });
 
-      if (!mobile_rgx.test(navigator.agent)) continue;
+      if (!mobile_rgx.test(navigator.userAgent)) continue;
       sections[i].classList.add("section--collapsed");
     }
   });

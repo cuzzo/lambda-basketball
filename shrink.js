@@ -2,7 +2,7 @@
   "use strict";
 
   document.addEventListener("DOMContentLoaded", function(ev) {
-    var mobile_rgx = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i,
+    var mobile_rgx = /mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i,
         sections = document.querySelectorAll(".section--separated .section--header"),
         i;
 

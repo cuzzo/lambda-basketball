@@ -8,14 +8,39 @@ body {
   border-bottom: 1px solid #afafaf;
 }
 
-.header--tight {
-  margin-bottom: 0;
-  padding-bottom: 0;
+.section--header:before {
+  content: "-";
+  display: inline-block;
+  padding: 0 0.25em 0 0;
+  width: 1em;
 }
+
+.section--header:hover {
+  cursor: pointer;
+}
+
+.section--header:hover:before {
+  color: #f00;
+}
+
+.section--collapsed :not(h2) {
+  display: none;
+}
+
+.section--collapsed .section--header:before {
+  content: "+";
+}
+
+.section--collapsed .section--header:hover:before {
+  color: #0f0;
+}
+
 
 .p--tight {
   margin-top: 0;
   padding-top: 0;
+  position: relative;
+  top: -1.15em;
 }
 
 .ul--tight {

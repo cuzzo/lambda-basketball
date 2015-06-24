@@ -20,10 +20,6 @@ body {
   cursor: pointer;
 }
 
-.section--collapsible .section__header:hover:before {
-  color: #f00;
-}
-
 .section--collapsed :not(h2) {
   display: none;
 }
@@ -32,11 +28,6 @@ body {
   font-family: FontAwesome;
   content: "\f078";
 }
-
-.section--collapsed .section__header:hover:before {
-  color: #0f0;
-}
-
 
 .p--tight {
   margin-top: 0;

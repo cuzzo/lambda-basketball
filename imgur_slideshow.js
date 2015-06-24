@@ -88,8 +88,8 @@ var SlideshowView = function($el, album) {
   }.bind(this);
 
   setInterval(function() {
-      this.change();
       this.increment_index();
+      this.change();
     }.bind(this), this.interval);
   this.change();
 };

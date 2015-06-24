@@ -200,6 +200,7 @@ body {
 /** Social Links Start **/
 .presence {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   max-width: 520px;
@@ -207,9 +208,10 @@ body {
 }
 
 .presence__link {
-  -ms-flex: 4;
-  -webkit-box-flex: 4;
-  flex: 4;
+  -ms-flex: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
   font-size: 52px;
   text-align: center;
 }

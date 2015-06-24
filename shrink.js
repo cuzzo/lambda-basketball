@@ -33,4 +33,10 @@
       section.classList.add("section--collapsed");
     }
   });
+
+  window.addEventListener("hashchange", function(ev) {
+    var sections = document.querySelectorAll(window.location.hash);
+    if (sections.length === 0) return;
+    sections[0].classList.remove("section--collapsed");
+  });
 })();

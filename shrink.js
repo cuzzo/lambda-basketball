@@ -1,17 +1,16 @@
 (function (ELEMENT) {
-  ELEMENT.matches = ELEMENT.matches || ELEMENT.mozMatchesSelector || ELEMENT.msMatchesSelector || ELEMENT.oMatchesSelector || ELEMENT.webkitMatchesSelector;
+  ELEMENT.matches = ELEMENT.matches
+      || ELEMENT.mozMatchesSelector
+      || ELEMENT.msMatchesSelector
+      || ELEMENT.oMatchesSelector
+      || ELEMENT.webkitMatchesSelector;
 
   ELEMENT.closest = ELEMENT.closest || function closest(selector) {
     var element = this;
-
     while (element) {
-      if (element.matches(selector)) {
-        break;
-      }
-
+      if (element.matches(selector)) break;
       element = element.parentElement;
     }
-
     return element;
   };
 }(Element.prototype));
@@ -21,11 +20,11 @@
 
   document.addEventListener("DOMContentLoaded", function(ev) {
     var mobile_rgx = /mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i,
-        sections = document.querySelectorAll(".section--separated .section--header"),
+        sections = document.querySelectorAll(".section--collapsible .section__header"),
         i;
 
     for (i = 0; i < sections.length; i++) {
-      var section = sections[i].closest(".section--separated");
+      var section = sections[i].closest(".section--collapsible");
       sections[i].addEventListener("click", function(ev) {
           this.classList.toggle("section--collapsed");
         }.bind(section));

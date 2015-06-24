@@ -8,7 +8,7 @@ body {
   border-bottom: 1px solid #afafaf;
 }
 
-.section--header:before {
+.section--collapsible .section__header:before {
   font-family: FontAwesome;
   content: "\f054";
   display: inline-block;
@@ -16,11 +16,11 @@ body {
   width: 1em;
 }
 
-.section--header:hover {
+.section--collapsible .section__header:hover {
   cursor: pointer;
 }
 
-.section--header:hover:before {
+.section--collapsible .section__header:hover:before {
   color: #f00;
 }
 
@@ -28,12 +28,12 @@ body {
   display: none;
 }
 
-.section--collapsed .section--header:before {
+.section--collapsed .section__header:before {
   font-family: FontAwesome;
   content: "\f078";
 }
 
-.section--collapsed .section--header:hover:before {
+.section--collapsed .section__header:hover:before {
   color: #0f0;
 }
 

@@ -3,70 +3,154 @@
 <head>
   <!-- todo: accronym Lambda to Los Angeles Gay Basketball -->
   <title>Lambda | Los Angeles Gay Basketball</title>
+  <meta name="viewport" content="width=device-width" />
   <meta />
   <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="imgur_slideshow.css" />
   <link rel="stylesheet" type="text/css" href="lambda.css" />
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="instafeed.min.js"></script>
+  <script type="text/javascript" src="imgur_slideshow.js" data-client-id="384649594294e1a"></script>
   <script type="text/javascript" src="hamburger.js"></script>
+  <script type="text/javascript" src="shrink.js"></script>
+  <script type="text/javascript">
+    var feed = new Instafeed({
+      clientId: "ccf746978f7c4701b4cdd58bc85313ab",
+      accessToken: "317747729.ccf7469.f314ed6eda80420a8240f07796a4cf32",
+      get: "tagged",
+      tagName: "lambdafamily",
+      filter: function(image) {
+        return image.user.id === "317747729";
+      }
+    });
+    document.addEventListener("DOMContentLoaded", function(ev) {
+      feed.run();
+    });
+  </script>
 </head>
 <body>
-  <header>
-   <button class="hamburger hamburger__htx" data-toggle-el="header__nav">
+  <header id="header" class="header">
+   <button class="hamburger hamburger__htx" data-toggle-el="header">
       <span>toggle menu</span>
    </button>
    <h1 class="header__title"><a href="/" class="header__link">Lambda Basketball</a></h1>
-   <nav id="header__nav" class="pure-g header__nav">
-     <ul class="pure-u-1 pure-u-md-1-3">
-        <li><a href="#new-players" title="New Players">New Players</a></li>
-        <li><a href="#social" title="Lambda Social Life">Social</a></li>
-        <li><a href="#travel-leagues" title="Gay Travel Basketball Leagues">Travel Leagues</a></li>
-        <li><a href="#lambda-league" title="Los Angeles Gay Basketball League">Lambda League</a></li>
-        <li><a href="#about" title="About Lambda Basketball">About</a></li>
-        <li><a href="">Calendar</a></li>
+   <nav class="pure-g header__nav">
+     <ul class="pure-u-1 pure-u-md-1-3 header__menu">
+        <li><a href="#open-gym" title="Lambda Open Gym" class="header__link">Open Gym</a></li>
+        <li><a href="#social" title="Lambda Social Events" class="header__link">Social Events</a></li>
+        <li><a href="#travel-teams" title="Gay Travel Basketball Teams" class="header__link">Travel Teams</a></li>
+        <li><a href="#lambda-league" title="Los Angeles Gay Basketball League" class="header__link">League</a></li>
+        <li><a href="#about" title="About Lambda Basketball" class="header__link">About</a></li>
+        <li><a href="" title="Lambda Calendar" class="header__link">Calendar</a></li>
       </ul>
     </nav>
   </header>
-  <section id="hero" class="hero"></section>
-  <section id="social-links"></section>
-  <section id="new-players">
-    <h2>Want to Play with Us?</h2>
-      <h3>When we play:</h3>
-      <p>Open play is 7:30-9:30 p.m. Tuesdays and Fridays.<br />
-        + <a href="#lambda-league">League Play</a>. Check out our <a href="#rules">rules</a>.</p>
-      <h3>Where we play:</h3>
-      <p><a href="">Bancroft Middle School</a> &amp; <a href="">Contreras High School</a><br />
-        + <a href="#travel-leagues">Travel Leagues</a>.</p>
-      <h3>How to join:</h3>
-      <p>Come to <a href="">CHS</a> on Tuesday or <a href="">BMS</a> on Friday. Bring your shoes and your game.<br />
-        Don't be shy. New players join weekly, and we accomodate all skill levels from beginners to former college athletes.<br />
-        Anyone is welcome. Anyone can be challenged.</p>
+  <section id="hero" class="hero" data-imgur-album-id="tUf3Q"></section>
+  <section id="social-links" class="presence">
+    <a href="https://www.facebook.com/lambdabasketball" title="Lambda Facebook" class="presence__link presence__link--facebook"><i class="fa fa-facebook-official"></i></a>
+    <a href="https://instagram.com/lambdabasketball/" title="Lambda Instagram" class="presence__link presence__link--instagram"><i class="fa fa-instagram"></i></a>
+    <a href="https://www.flickr.com/photos/42642399@N03/sets/" title="Lambda Flickr" class="presence__link presence__link--flickr"><i class="fa fa-flickr"></i></a>
+    <a href="https://twitter.com/lambdabball" title="Lambda Twitter" class="presence__link presence__link--twitter"><i class="fa fa-twitter"></i></a>
+    <a href="https://www.google.com/calendar/embed?src=admin%40lambdabasketball.com&ctz=America/Los_Angeles" class="presence__link presence__link--calendar"><i class="fa fa-calendar"></i></a>
   </section>
-  <section id="announcements"></section><!-- only if FB announcement in the last week -->
-  <section id="social">
-    <h2>Lambda Outisde Basketball</h2>
-      Instagram Gallery. List of upcoming events. Calendar link.
+  <section id="new-players" class="section--separated">
+    <h2 class="section__header">Want to play with us?</h2>
+    <p>We welcome new players at <a href="#open-gym">open gym</a> and our seasonal <a href="#lambda-league">leagues</a>. Check out the information below or <a href="#contact-us">Contact Us</a> if you have questions.</p>
   </section>
-  <section id="travel-leagues">
-    <h2>Lambda Outside <abbr title="Los Angeles">LA</abbr></h2>
-      Instagram Gallery. Link to previous tournament and next tournament. Perhaps list of Los Angeles teams? Etc...
+  <section id="open-gym" class="section--separated section--collapsible">
+    <h2 class="section__header">Open Gym</h2>
+    <p>Open Gym is our version of pick-up/scrimmage night where we run 5 on 5, eight minute games. These nights are open to players of all skill levels, unless otherwise noted on the <a href="https://www.google.com/calendar/embed?src=admin%40lambdabasketball.com&ctz=America/Los_Angeles" title="Lambda Calendar">calendar</a>.</p>
+    <p class="action">Come in with a reversible jersey (or dark and light shirts), sign a waiver, pay $5 and you're good to go! One of our Lambda Basketball <a href="#board-of-directors">Board of Directors</a> will be at the score table to help you get started.</p>
+
+     <h4 class="header--tight"><u>Wednesdays</u></h4>
+     <ul class="ul--tight">
+       <li>Santee High School <br /><a href="https://www.google.com/maps/place/Santee+Education+Complex/@34.0278969,-118.2639031,17z/data=!3m1!4b1!4m2!3m1!1s0x80c2c7d0e3f32c0d:0x7c6c5ff4c67721e7">1921 Maple Ave, South LA, CA</a> <br />(Gym entrance is on S. Los Angeles St)</li>
+       <li>7:30 - 10:00 p.m.</li>
+     </ul>
+
+     <h4 class="header--tight"><u>Fridays</u></h4>
+     <ul class="ul--tight">
+       <li>Bancroft Middle School <br /><a href="https://www.google.com/maps/place/Hubert+Howe+Bancroft+Middle+School/@34.087906,-118.336353,17z/data=!3m1!4b1!4m2!3m1!1s0x80c2bf2d0ed4aaf7:0xc75a7e7d13a7866e">929 N Las Palmas Ave, LA, CA</a> <br />(Gym entrance is on Willoughby Ave above parking garage)</li>
+       <li>7:30 - 9:30 p.m.</li>
+     </ul>
+    </section>
   </section>
-  <section id="lambda-league">
-     <h2>Lambda Basketball League</h2>
-       Instagram Gallery. Dates of next season. Status of current season if applicable. Link to nerdball for stats on current season, times of games, etc...
+  <!--<section id="announcements">only if FB announcement in the last week </section>-->
+  <section id="social" class="section--separated section--collapsible">
+    <h2 class="section__header">Social Events</h2>
+    <p>Check out our <a href="https://www.google.com/calendar/embed?src=admin%40lambdabasketball.com&ctz=America/Los_Angeles" title="Lambda Calendar">calendar</a> for upcoming social events.</p>
+    <div id="instafeed"></div>
+    <div data-calendar-id="admin@lambdabasketball.com"></div>
   </section>
-  <section id="about">
-    <h2>About Lambda</h2>
+  <section id="lambda-league" class="section--separated section--collapsible">
+    <h2 class="section__header">League</h2>
+    <p>Lambda Basketball operates 2 league seasons per year in the Spring and Fall.  The season is generally 10-13 games and costs $100 which covers costs for the gym, referees, a reversible jersey, draft party, and a closing party.  Teams of 8 are Captained by volunteer players in the league and consist of all skill levels. <span class="action"></span></p>
+   <ul>
+     <li>Sign up for the league (this link is active when we are accepting sign ups).</li>
+     <li><a href="http://nerdballstats.com/lambda15/">Nerd Ball Stats</a></li>
+     <li><a href="#rules-and-procedures">League Rules and Procedures</a></li>
+   </ul>
+  </section>
+  <section id="travel-teams" class="section--separated section--collapsible">
+    <h2 class="section__header">Travel Teams</h2>
+    <p>Lambda Basketball is proud to have many teams from the Los Angeles area represent us at various tournaments around the country and internationally.  If you are interested in playing on a travel team, please <a href="mailto:admin@lambdabasketball.com">email us</a> and we'll help you get in contact with a team that is looking to add players.</p>
+  </section>
+  <section id="rules-and-procedures" class="section--separated section--collapsible">
+    <h2 class="section__header">Rules and Procedures</h2>
+    <ul>
+      <li>League Rules
+        <ul>
+          <li>How the draft works</li>
+          <li>How we replace players in the league</li>
+          <li>How we pick captains</li>
+        </ul>
+      </li>
+      <li>Open Gym Rules</li>
+      <li>Code of Conduct Violations</li>
+    </ul>
+  </section>
+  <section id="about" class="section--separated section--collapsible">
+    <h2 class="section__header">About Lambda</h2>
     <h3>Mission Statement</h3>
-      <p>Lambda Basketball is an integrated and all-inclusive organization dedicated to providing the Los Angeles area LGBT community and its friends with a well-organized and friendly sporting environment. We are committed to uniting athletes, communities and cultures on and off the court while promoting health education and community service.</p>
-    <h3>Board of Directors</h3>
-      Avatar, name, links to profiles? or mailto.
+      <p>Lambda Basketball is an integrated and all-inclusive organization dedicated to providing the Los Angeles area LGBT community and its friends with a well-organized and friendly sporting environment. We are committed to uniting athletes, communities and cultures on and off the court while promoting health education and community service. Lambda is a subsidiary of Community OUTreach Alliance (COA).</p>
+    <h3 id="board-of-directors id="board-of-directors"">Board of Directors</h3>
+      <ul class="pure-g directors">
+        <li class="pure-u-1-3 director__icon">
+          <div class="director__avatar director__avatar--jason"></div>
+          <a href="" title="Contact Jason Jaramillo">Jason Jaramillo &mdash; President</a>
+        </li>
+       <li class="pure-u-1-3 director__icon">
+          <div class="director__avatar director__avatar--drew"></div>
+          <a href="" title="Contact Andrew Moran">Andrew Moran &mdash; Vice President</a>
+        </li>
+        <li class="pure-u-1-3 director__icon">
+          <div class="director__avatar director__avatar--brian"></div>
+          <a href="" title="Contact Brian Davis">Brian Davis &mdash; Secretary</a>
+        </li>
+        <li class="pure-u-1-3 director__icon">
+          <div class="director__avatar director__avatar--aaron"></div>
+          <a href="" title="Contact Aaron Morris">Aaron Morris &mdash; Treasurer</a>
+        </li>
+        <li class="pure-u-1-3 director__icon">
+          <div class="director__avatar director__avatar--garsten"></div>
+          <a href="" title="Contact Garsten Bergquist">Garsten Bergquist &mdash; Board Member at Large</a>
+        </li>
+      </ul>
+    <h3 id="contact-us">Contact Us</h3>
+    <ul>
+      <li><a href="http://lambdabasketball.wufoo.com/forms/sign-up-for-lambda-basketball">Sign Up for Lambda Email Announcements</a></li>
+      <li><a href="mailto:admin@lambdabasketball.com">Email Us</a></li>
+    </ul>
   </section>
   <footer>
     <div>
-      <h4>Others</h4>
+      <h4>Other Gay Basketball Leagues</h4>
+      <p>There are many other gay basketball leagues around the country. Check out the <a href="http://ngbaus.com/">National Gay Basketball Association</a> for more info.</p>
     </div>
     <p>
-      <small>&copy; 2015 Lambda Basketball. All rights reserved.</small>
-      <small>Coded with love by <a href="https://gitthub.com/cuzzo">Cuzzo</a>.</small>
+      <small class="footer__small">&copy; 2015 Lambda Basketball. All rights reserved.</small>
+      <small class="footer__small">Coded with love by <a href="https://gitthub.com/cuzzo">Cuzzo</a>.</small>
     </p>
   </footer>
 </body>

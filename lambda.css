@@ -1,6 +1,48 @@
 body {
-  width: 320px;
-  border: 1px solid #000;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.section--separated {
+  border-bottom: 1px solid #afafaf;
+}
+
+.section--collapsible .section__header:before {
+  font-family: FontAwesome;
+  content: "\f054";
+  display: inline-block;
+  padding: 0 0.25em 0 0;
+  width: 1em;
+}
+
+.section--collapsible .section__header:hover {
+  cursor: pointer;
+}
+
+.section--collapsed :not(h2) {
+  display: none;
+}
+
+.section--collapsed .section__header:before {
+  font-family: FontAwesome;
+  content: "\f078";
+}
+
+.p--tight {
+  margin-top: 0;
+  padding-top: 0;
+  position: relative;
+  top: -1.15em;
+}
+
+.ul--tight {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.action {
+  font-weight: bold;
 }
 
 .header__nav {
@@ -8,11 +50,16 @@ body {
   opacity: 0;
   height: 0;
 }
-.header__nav.hamburger--active {
+.hamburger--active .header__nav {
   visibility: visible;
   opacity: 1;
   height: auto;
   transition: height 1s, opacity 1s;
+}
+.header.hamburger--active {
+  background-color: #cb0032;
+  color: #fff;
+  transition: background-color 0.3s;
 }
 
 .header__title {
@@ -21,15 +68,26 @@ body {
   font-size: 22px;
 }
 
+.header__menu {
+  list-style-type: none;
+  padding: 0 0 0 1em;
+  margin: 0.5em 0 1.5em 0;
+}
+
 .header__link {
   text-decoration: none;
   color: inherit;
 }
 
+.header__link:hover {
+  text-decoration: underline;
+}
+
 .hero {
   position: relative;
   padding-bottom: 36%;
-  background: url("http://lambdabasketball.com/wp-content/themes/starkers-html5/style/images/spring-2015.png") no-repeat top left;
+  background-repeat: no-repeat;
+  background-position: top left;
   background-size: contain;
 }
 
@@ -38,7 +96,7 @@ body {
   display: inline-block;
   position: relative;
   overflow: hidden;
-  margin: 0 15px 0 0;
+  margin: 0 10px 0 0;
   padding: 0;
   width: 64px;
   height: 56px;
@@ -131,3 +189,97 @@ body {
   transition-delay: 0, 0.3s;
 }
 /** Hamburger End **/
+
+/** Social Links Start **/
+.presence {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.presence__link {
+  -ms-flex: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  font-size: 52px;
+  text-align: center;
+}
+
+.presence__link--facebook {
+  color: #3b5998;
+}
+
+.presence__link--instagram {
+  color: #517fa4;
+}
+
+.presence__link--flickr {
+  color: #ff0084;
+}
+
+.presence__link--twitter {
+  color: #00aced;
+}
+.presence__link--calendar {
+  color: #5202BA;
+}
+/** Social Links End **/
+
+/** Directors Start **/
+.directors {
+  list-style-type: none;
+  padding: 0;
+}
+
+.director__icon {
+  width: 90%;
+  max-width: 320px;
+  margin: 0 auto;
+  padding-bottom: 0.5em;
+}
+
+.director__avatar {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 120px;
+}
+
+.director__avatar--aaron {
+  background-image: url("http://lambdabasketball.com/wp-content/uploads/2010/09/224736_1071213739804_1799_n-300x232.jpg");
+}
+
+.director__avatar--drew {
+  background-image: url("http://lambdabasketball.com/wp-content/themes/starkers-html5/style/images/drew.jpg");
+}
+
+.director__avatar--jason {
+  background-image: url("http://lambdabasketball.com/wp-content/themes/starkers-html5/style/images/jason.jpg");
+}
+
+.director__avatar--garsten {
+  background-image: url("http://lambdabasketball.com/wp-content/uploads/2010/09/ResizedLambda-300x192.jpg");
+}
+
+.director__avatar--brian {
+  background-image: url("http://lambdabasketball.com/wp-content/themes/starkers-html5/style/images/brian.jpg");
+}
+/** Directors End **/
+
+/** IG Start **/
+#instafeed img {
+  max-width: 150px;
+  width: 25%;
+}
+
+#instafeed a:nth-child(n+9) {
+  display: none;
+}
+/** IG End **/
+
+.footer__small {
+  display: block;
+}

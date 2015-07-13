@@ -254,28 +254,28 @@ body {
 }
 
 .director__avatar--aaron {
-  background-image: url("/images/aaron.jpg");
+  background-image: url("images/aaron.jpg");
 }
 
 .director__avatar--drew {
-  background-image: url("/images/drew.jpg");
+  background-image: url("images/drew.jpg");
   background-size: cover;
 }
 
 .director__avatar--jason {
-  background-image: url("/images/jason.jpg");
+  background-image: url("images/jason.jpg");
 }
 
 .director__avatar--brian {
-  background-image: url("/images/brian.jpg");
+  background-image: url("images/brian.jpg");
 }
 
 .director__avatar--scott {
-  background-image: url("/images/scott.jpg");
+  background-image: url("images/scott.jpg");
 }
 
 .director__avatar--ryan {
-  background-image: url("/images/ryan.jpg");
+  background-image: url("images/ryan.jpg");
 }
 /** Directors End **/
 

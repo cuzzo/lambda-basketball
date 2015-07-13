@@ -1,6 +1,7 @@
 body {
   width: 100%;
   max-width: 720px;
+  padding: 0 10px;
   margin: 0 auto;
 }
 
@@ -235,9 +236,12 @@ body {
   padding: 0;
 }
 
+.director__position {
+  display: block;
+  width: 100px;
+}
+
 .director__icon {
-  width: 90%;
-  max-width: 320px;
   margin: 0 auto;
   padding-bottom: 0.5em;
 }
@@ -245,27 +249,33 @@ body {
 .director__avatar {
   background-repeat: no-repeat;
   background-size: cover;
-  height: 120px;
+  height: 100px;
+  width: 100px;
 }
 
 .director__avatar--aaron {
-  background-image: url("http://lambdabasketball.com/wp-content/uploads/2010/09/224736_1071213739804_1799_n-300x232.jpg");
+  background-image: url("/images/aaron.jpg");
 }
 
 .director__avatar--drew {
-  background-image: url("http://lambdabasketball.com/wp-content/themes/starkers-html5/style/images/drew.jpg");
+  background-image: url("/images/drew.jpg");
+  background-size: cover;
 }
 
 .director__avatar--jason {
-  background-image: url("http://lambdabasketball.com/wp-content/themes/starkers-html5/style/images/jason.jpg");
-}
-
-.director__avatar--garsten {
-  background-image: url("http://lambdabasketball.com/wp-content/uploads/2010/09/ResizedLambda-300x192.jpg");
+  background-image: url("/images/jason.jpg");
 }
 
 .director__avatar--brian {
-  background-image: url("http://lambdabasketball.com/wp-content/themes/starkers-html5/style/images/brian.jpg");
+  background-image: url("/images/brian.jpg");
+}
+
+.director__avatar--scott {
+  background-image: url("/images/scott.jpg");
+}
+
+.director__avatar--ryan {
+  background-image: url("/images/ryan.jpg");
 }
 /** Directors End **/
 

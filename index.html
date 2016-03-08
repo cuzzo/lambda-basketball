@@ -9,25 +9,6 @@
   <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="imgur_slideshow.css" />
   <link rel="stylesheet" type="text/css" href="lambda.css" />
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script type="text/javascript" src="instafeed.min.js"></script>
-  <script type="text/javascript" src="imgur_slideshow.js" data-client-id="384649594294e1a"></script>
-  <script type="text/javascript" src="hamburger.js"></script>
-  <script type="text/javascript" src="shrink.js"></script>
-  <script type="text/javascript">
-    var feed = new Instafeed({
-      clientId: "ccf746978f7c4701b4cdd58bc85313ab",
-      accessToken: "317747729.ccf7469.f314ed6eda80420a8240f07796a4cf32",
-      get: "tagged",
-      tagName: "lambdafamily",
-      filter: function(image) {
-        return image.user.id === "317747729";
-      }
-    });
-    document.addEventListener("DOMContentLoaded", function(ev) {
-      feed.run();
-    });
-  </script>
 </head>
 <body>
   <header id="header" class="header">
@@ -79,9 +60,11 @@
   <!--<section id="announcements">only if FB announcement in the last week </section>-->
   <section id="social" class="section--separated section--collapsible">
     <h2 class="section__header">Social Events</h2>
-    <p>Check out our <a href="https://www.google.com/calendar/embed?src=admin%40lambdabasketball.com&ctz=America/Los_Angeles" title="Lambda Calendar">calendar</a> for upcoming social events.</p>
     <div id="instafeed"></div>
-    <div data-calendar-id="admin@lambdabasketball.com"></div>
+
+    <h3>Upcoming Events</h3>
+    <div class="social__events" data-calendar-id="admin@lambdabasketball.com" data-calendar-key="AIzaSyCR3-ptjHE-_douJsn8o20oRwkxt-zHStY"></div>
+    <p>Check out our <a href="https://www.google.com/calendar/embed?src=admin%40lambdabasketball.com&ctz=America/Los_Angeles" title="Lambda Calendar">calendar</a> for more upcoming social events.</p>
   </section>
   <section id="lambda-league" class="section--separated section--collapsible">
     <h2 class="section__header">League</h2>
@@ -152,5 +135,27 @@
       <small class="footer__small">Coded with love by <a href="https://github.com/cuzzo" title="Cuzzo Yahn">Cuzzo</a>.</small>
     </p>
   </footer>
+
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="instafeed.min.js"></script>
+  <script type="text/javascript" src="imgur_slideshow.js" data-client-id="384649594294e1a"></script>
+  <script type="text/javascript" src="hamburger.js"></script>
+  <script type="text/javascript" src="shrink.js"></script>
+  <script type="text/javascript" src="gcallist.js"></script>
+  <script type="text/javascript">
+    var feed = new Instafeed({
+      clientId: "ccf746978f7c4701b4cdd58bc85313ab",
+      accessToken: "317747729.ccf7469.f314ed6eda80420a8240f07796a4cf32",
+      get: "tagged",
+      tagName: "lambdafamily",
+      filter: function(image) {
+        return image.user.id === "317747729";
+      }
+    });
+    document.addEventListener("DOMContentLoaded", function(ev) {
+      feed.run();
+    });
+  </script>
 </body>
 </html>

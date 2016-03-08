@@ -290,6 +290,12 @@ body {
 }
 /** IG End **/
 
+/** GCAL Start **/
+.social__events li {
+  margin-bottom: 0.75em;
+}
+/** GCAL End **/
+
 .footer__small {
   display: block;
 }

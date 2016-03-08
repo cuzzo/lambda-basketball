@@ -9,86 +9,74 @@ var GEvent = function(when, where, uri, title, summary) {
 };
 
 var GEventCollection = function() {
-  this.get_cal_url = function(cal_id) {
-    params = "?orderby=starttime&sortorder=ascending&futureevents=true&alt=json"
-    return "https://www.google.com/calendar/feeds/"
-        + cal_id
-        + "%40group.calendar.google.com/public/basic"
-        + params;
+
+  this.get_cal_url = function(cal_id, cal_key) {
+    return "https://www.googleapis.com/calendar/v3/calendars/"
+    + cal_id
+    + "/events?key="
+    + cal_key
+    + "&orderBy=startTime&maxResults=25&singleEvents=true&timeMin="
+    + new Date().toISOString();
   };
 
-  this.parse_when = function(when_str) {
-    when_str = when_str.replace(/^When:/, "");
-    parts = when_str.split(String.fromCharCode(10));
-    if (parts.length === 1) {
-      date_str = parts[0];
-      tz_str = "";
-    }
-    else if (parts.length === 2) {
-      date_str = parts[0];
-      tz_str = parts[1];
+  this.parse_when = function(entry) {
+    var start = (entry.start && entry.start.dateTime) || null,
+        end = (entry.end && entry.end.dateTime) || null;
+
+    if (start) {
+      start = new Date(start);
+      if (end) {
+        end = new Date(end);
+        return {
+          date: start.toDateString().split(" ").slice(1, 3).join(" "),
+          time: start.toLocaleTimeString() + " - " + end.toLocaleTimeString()
+        }
+      }
+      else {
+        return {
+          date: start.toDateString(),
+          time: start.toLocaleTimeString()
+        }
+      }
     }
 
-    var comma_index = date_str.indexOf(",");
-    if (comma_index !== -1) {
-      var dt_str = date_str.substring(0, comma_index + 6);
-      var time_str = date_str.replace(dt_str, "");
-    }
-    else {
-      var dt_str = "";
-      var time_str = date_sftr;
-    }
+    return {};
+  };
+
+  this.parse_location = function(entry) {
+    if (!entry.location) return {};
     return {
-      date: dt_str,
-      time: time_str,
-      timezone: tz_str
+      link: "https://www.google.com/maps/place/" + entry.location.replace(" ", "+"),
+      name: entry.location.split(",")[0]
     };
   };
 
-  this.parse_where = function(where_str) {
-    where_str = where_str.replace(/^Where:/, "")
-    var display_name = where_str.replace(/, united states$/i, "");
-    if (display_name.split(",").length >= 3) {
-      display_name = display_name.substring(0, display_name.indexOf(","));
-    }
-    else {
-      display_name.replace(/, [A-Z]{2} \d{5}$/, "");
-      display_name.replace(/, [A-Z]{2} \d{5}-\d{4}$/, "");
-    }
-
-    return {
-      name: display_name,
-      link: "https://maps.google.com?q=" + where_str.replace(/ /g, "+")
-    };
-  };
-
-  this.get_content = function(entry) {
-    return entry.content.$t.split("<br />")
-        .map(function(line) {
-          return line
-              .replace(/\s+/, "")
-              .trim();
-        })
-        .filter(function(line) {
-          return line.length > 0;
-        });
-  };
-
-  this.fetch = function(cal_id, callback) {
-    $.getJSON(this.get_cal_url(cal_id), function(resp) {
-      var events = resp.feed.entry;
+  this.fetch = function(cal_id, cal_key, callback) {
+    $.getJSON(this.get_cal_url(cal_id, cal_key), function(resp) {
+      var events = resp.items;
       if (!events) return callback(null, []);
 
-      events = events.map(function(entry) {
-        content = this.get_content(entry);
-        return new GEvent(
-            this.parse_when(content[0]),
-            this.parse_where(content[1]),
-            entry.link[0].href,
-            entry.title.$t,
-            content[3]
-          );
-      }.bind(this));
+      events = events
+        .filter(function(entry) {
+          return entry.start && (entry.start.dateTime || entry.start.date);
+        })
+        .sort(function(a, b) {
+          return new Date(a.start.dateTime || a.start.date).getTime() -
+                 new Date(b.start.dateTime || b.start.date).getTime();
+        })
+        .map(function(entry) {
+          return new GEvent(
+              this.parse_when(entry),
+              this.parse_location(entry),
+              entry.htmlLink,
+              entry.summary,
+              entry.description
+            );
+        }.bind(this))
+        .filter(function(event) {
+          return event.when.date && event.where.name;
+        })
+        .slice(0, 5);
 
       return callback(null, events);
     }.bind(this));
@@ -104,7 +92,7 @@ var GEventListView = function($el, event_list) {
     $list = document.createElement("ul");
     event_list.forEach(function(event) {
       $li = document.createElement("li");
-      $li.innerHTML = '<span class="gcalevent__date">' + event.when.date + '</span>:'
+      $li.innerHTML = '<span class="gcalevent__date">' + event.when.date + '</span>: '
           + '<span class="gcalevent__time">' + event.when.time + '</span> <br />'
           + '<a href="' + event.uri + '" class="gcalevent__title">' + event.title + '</a> @ '
           + '<a href="' + event.where.link + '" class="gcalevent__where">' + event.where.name + '</a>';
@@ -117,8 +105,11 @@ var GEventListView = function($el, event_list) {
 document.addEventListener("DOMContentLoaded", function(ev) {
   $els = document.querySelectorAll("*[data-calendar-id]");
   $els.forEach(function($el) {
-    var events = new GEventCollection();
-    events.fetch($el.getAttribute("data-calendar-id"), function(err, resp) {
+    var events = new GEventCollection(),
+        cal_id = $el.getAttribute("data-calendar-id"),
+        cal_key = $el.getAttribute("data-calendar-key");
+
+    events.fetch(cal_id, cal_key, function(err, resp) {
       if (err) return console.error(err);
       var list_view = new GEventListView($el, resp);
       list_view.render();
